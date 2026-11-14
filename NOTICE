@@ -1,0 +1,23 @@
+GridSight
+Copyright 2026 Reza Farsi (Mohammad Reza Farsizadeh)
+
+This product includes documentation developed by the project maintainer.
+
+The Apache License 2.0 applies to the contents of this repository. It does not
+grant any right to the GridSight name, word mark or logo; see TRADEMARK.md.
+
+This repository contains documentation only. It does not contain the GridSight
+source code, binary artefacts, or test fixtures. When a source repository is
+published it will carry its own NOTICE listing dependencies, and it will exclude
+the benchmark harness and the third-party capture fixtures from any release
+artefact.
+
+No third-party code is distributed in this repository. The following are
+referenced by name in the documentation and are not distributed here:
+
+- IEC 61850 (IEC), ISO 9506 / MMS (ISO) and IEEE 1588 (IEEE) are standards, not
+  software; quoting clause numbers or field names is not a redistribution of
+  the standards.
+- libiec61850 is an independent open-source project used in the documentation as
+  a study reference for encoding conventions. It is not a dependency of this
+  project and no code from it is included here.

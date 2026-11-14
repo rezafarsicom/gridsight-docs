@@ -1,0 +1,44 @@
+name: Documentation problem
+description: A sentence, table, or claim in this repository is wrong or misleading
+title: "docs: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reading carefully. Please **do not** attach a customer SCD,
+        CID, PCAP, screenshot, or anything under an NDA. A synthetic example is
+        always enough.
+  - type: input
+    id: file
+    attributes:
+      label: File and section
+      placeholder: docs/WHAT-IS-PROVEN.md — "Does GridSight read a complete MMS conversation…"
+    validations:
+      required: true
+  - type: textarea
+    id: quote
+    attributes:
+      label: What the text says now
+      description: Copy the sentence or table row exactly.
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: Why it is wrong
+      description: The standard clause, measurement, or observation that contradicts it.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested wording (optional)
+      description: A smaller, more precise sentence is usually better than a longer one.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: This report contains no customer material, credentials, or site identifiers.
+          required: true

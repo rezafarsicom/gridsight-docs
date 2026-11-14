@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Product status and limits
+    url: https://rezafarsi.com/en/gridsight/
+    about: What exists, what is measured, and what is not proven.
+  - name: Security report
+    url: https://rezafarsi.com/contact/
+    about: Please report vulnerabilities privately, not in an issue.
+  - name: Substation work that has to happen now
+    url: https://rezafarsi.com/en/services/iec-61850/
+    about: Fixed-scope remote engineering, delivered today.

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  SYNTHETIC TEACHING FRAGMENT — NOT A VALID SCD, NOT A REAL SUBSTATION.
+
+  This file shows the shape of an IEC 61850 SCL document: a subnetwork, two
+  IEDs, a data set and a GOOSE control block. It deliberately omits the type
+  templates a resolvable file needs, and every identifier here is invented.
+  No tool has validated it. Do not import it into a project.
+
+  See ../README.md in this folder before changing anything.
+-->
+
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL"
+     version="2003"
+     revision="B"
+     release="4">
+
+  <Header id="SYNTHETIC-EXAMPLE"
+          version="0.1"
+          revision="1"
+          toolID="hand-written"
+          nameStructure="IEDName">
+    <History>
+      <Hitem version="0.1" revision="1" when="2026-11-14" who="example"
+             what="Synthetic fragment created to explain SCL structure"/>
+    </History>
+  </Header>
+
+  <Communication>
+    <SubNetwork name="ProcessBus" type="8-MMS">
+      <ConnectedAP iedName="RELAY1" apName="S1">
+        <Address>
+          <P type="IP">192.0.2.11</P>
+          <P type="IP-SUBNET">255.255.255.0</P>
+        </Address>
+        <GSE ldInst="LD0" cbName="TripGoose">
+          <Address>
+            <P type="MAC-Address">01-0C-CD-01-00-01</P>
+            <P type="APPID">0001</P>
+            <P type="VLAN-ID">002</P>
+            <P type="VLAN-PRIORITY">4</P>
+            <P type="MinTime">4</P>
+            <P type="MaxTime">1000</P>
+          </Address>
+        </GSE>
+      </ConnectedAP>
+      <ConnectedAP iedName="MU1" apName="S1">
+        <Address>
+          <P type="IP">192.0.2.21</P>
+          <P type="IP-SUBNET">255.255.255.0</P>
+        </Address>
+      </ConnectedAP>
+    </SubNetwork>
+  </Communication>
+
+  <IED name="RELAY1" type="SyntheticRelay" manufacturer="Example" configVersion="1.0">
+    <AccessPoint name="S1">
+      <Server>
+        <Authentication none="true"/>
+        <LDevice inst="LD0">
+          <LN0 lnClass="LLN0" inst="" lnType="LLN0_Synthetic">
+
+            <DataSet name="TripDS">
+              <FCDA ldInst="LD0" prefix="" lnClass="PTRC" lnInst="1"
+                    doName="Tr" daName="general" fc="ST"/>
+              <FCDA ldInst="LD0" prefix="" lnClass="XCBR" lnInst="1"
+                    doName="Pos" daName="stVal" fc="ST"/>
+            </DataSet>
+
+            <GSEControl name="TripGoose"
+                        desc="Synthetic example control block"
+                        type="GOOSE"
+                        datSet="TripDS"
+                        confRev="1"
+                        appID="RELAY1/TripGoose"/>
+
+            <DOI name="Mod">
+              <DAI name="stVal" val="on"/>
+            </DOI>
+          </LN0>
+
+          <LN lnClass="PTRC" inst="1" lnType="PTRC_Synthetic"/>
+          <LN lnClass="XCBR" inst="1" lnType="XCBR_Synthetic"/>
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+
+  <IED name="MU1" type="SyntheticMergingUnit" manufacturer="Example" configVersion="1.0">
+    <AccessPoint name="S1">
+      <Server>
+        <Authentication none="true"/>
+        <LDevice inst="LD0">
+          <LN0 lnClass="LLN0" inst="" lnType="LLN0_Synthetic">
+
+            <SampledValueControl name="CurrentSV"
+                                 desc="Synthetic sampled-value control block"
+                                 datSet="SV_DS"
+                                 confRev="1"
+                                 smvID="MU1/CurrentSV"
+                                 smpRate="80"
+                                 nofASDU="1"/>
+
+            <DataSet name="SV_DS">
+              <FCDA ldInst="LD0" prefix="" lnClass="TCTR" lnInst="1"
+                    doName="Amp" daName="instMag" fc="MX"/>
+            </DataSet>
+          </LN0>
+
+          <LN lnClass="TCTR" inst="1" lnType="TCTR_Synthetic"/>
+        </LDevice>
+      </Server>
+    </AccessPoint>
+  </IED>
+
+</SCL>

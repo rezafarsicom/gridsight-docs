@@ -1,0 +1,30 @@
+name: Question about the approach
+description: Ask about scope, test method, or why a limit exists
+title: "question: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about how the tool is being built are welcome. Questions about
+        buying it end at the same answer today: there is no public release.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: One paragraph. Concrete beats broad.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (optional)
+      description: Which substation stage, which tool you use today, what you are trying to decide.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: This contains no customer material, credentials, or site identifiers.
+          required: true
+        - label: I have read docs/STATUS.md and docs/KNOWN-LIMITATIONS.md.

@@ -1,0 +1,20 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Never commit what a report might contain
+*.pcap
+*.pcapng
+*.scd
+*.cid
+*.iid
+*.icd
+*.log
+*.env
+.env*
