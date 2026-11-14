@@ -62,7 +62,7 @@ This is also why the source tree is not here. What is published is the part that
 ## How to use this repository
 
 - **Reading:** no build step. Any Markdown viewer.
-- **Checking links before you send a change:** `node scripts/check-links.mjs` (Node 18+, no dependencies).
+- **Checking links before you send a change:** `node scripts/check-links.mjs` (Node 20.11+, no dependencies).
 - **Reporting a problem:** open an issue. Do not attach a customer SCD, credentials, or anything under an NDA — see [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md).
 
 ## Licence and name
