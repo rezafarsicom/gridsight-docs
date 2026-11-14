@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512" role="img" aria-label="GridSight">
+  <title>GridSight</title>
+  <rect x="0" y="0" width="24" height="24" rx="5.2" fill="#171a1e"/>
+  <g fill="#f3f1ea">
+    <rect x="4.4" y="6.6" width="1.9" height="7.2" rx="0.95"/>
+    <rect x="7.75" y="6.6" width="1.9" height="7.2" rx="0.95"/>
+    <rect x="11.1" y="6.6" width="1.9" height="7.2" rx="0.95"/>
+    <rect x="14.45" y="6.6" width="1.9" height="7.2" rx="0.95"/>
+  </g>
+  <rect x="17.8" y="10.8" width="1.9" height="7.2" rx="0.95" fill="#c87f4a"/>
+</svg>

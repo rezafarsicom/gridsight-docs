@@ -1,3 +1,5 @@
+<p align="left"><img src="assets/icon-256.png" width="72" height="72" alt="GridSight mark: four framing bars, one out of line"></p>
+
 # GridSight IEC 61850 — public documentation
 
 **GridSight is a desktop, offline tool for IEC 61850 diagnostics and interoperability testing in digital substations.** It reads a substation configuration file (SCL), analyses captured GOOSE and SV traffic, builds virtual IEDs from the same SCL, and writes a report from the analysis.
