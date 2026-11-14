@@ -55,6 +55,14 @@ alongside it.
   are malformed, so asserting on them would encode a bug.
 - **MMS capture.** Out of scope; see [`KNOWN-LIMITATIONS.md`](KNOWN-LIMITATIONS.md).
 
+## The argument in full
+
+The method above is written out as a standalone note — what a capture can prove, what it
+cannot, the five fields to record with every capture, and the five defects it exposed here:
+
+<https://rezafarsi.com/en/articles/goose-capture-evidence/> (English)
+<https://rezafarsi.com/fa/articles/goose-capture-evidence/> (Persian)
+
 ## Reproducing the numbers
 
 The suite runs from the source repository, which is not public. This page
