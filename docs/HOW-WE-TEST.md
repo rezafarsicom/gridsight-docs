@@ -31,13 +31,13 @@ sequence is not one recorded TCP session, and the test says so.
 
 ## Measured state
 
-Measured **14 November 2026** on the working branch, after the live session with
+Measured **15 November 2026** on the working branch, after the interface gate closed with
 libiec61850 v1.6.2.1 — OpenJDK 17.0.16 LTS, Gradle 9.3.1, Kotlin 2.2.21:
 
 | Metric | Value |
 | --- | --- |
-| Tests | **836**, 0 failed, 0 errors, **1 skipped** — the opt-in live-peer test, which runs with GRIDSIGHT_LIVE_PEER=1 |
-| Aggregate line coverage | **74.65%** |
+| Tests | **851**, 0 failed, 0 errors, **1 skipped** — the opt-in live-peer test, which runs with GRIDSIGHT_LIVE_PEER=1 |
+| Aggregate line coverage | **75.23%** |
 | MMS module line coverage | **92.06%** |
 | gridsight-ui line coverage | **73.32%** |
 | Per-module coverage floors | Enforced by the build; lowering a floor is not permitted |

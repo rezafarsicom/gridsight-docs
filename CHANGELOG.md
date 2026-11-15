@@ -3,6 +3,19 @@
 Documentation changes only. The product itself is unreleased, so this file does
 not list product features as if they had shipped.
 
+## 2026-11-15 — G2 closed on a committed sample
+
+The interface gate closed on evidence, not on a screenshot of a hand-built state:
+
+- samples/ added: one SCD, one four-frame capture, and a README naming the two planted
+  defects. A test drives the whole path over them on every build.
+- Two error paths now say what went wrong instead of showing a stack trace.
+- The app builds and launches from a clean git archive export.
+- The report exports to a file a reader can open, with a JSON issue list and a
+  statement of the checks that did not run.
+- **851 tests** (1 skipped), **75.23%** aggregate coverage, **73.42%** in the UI module.
+- G2 is **closed**; G3 is in progress — the scenario harness and the suggested-change
+  table are not done and are not claimed.
 ## 2026-11-14 (later the same day) — G1 closed, numbers refreshed
 
 The live session with libiec61850 v1.6.2.1 passed and the defects it exposed were

@@ -16,6 +16,17 @@ measurement supports, and no more.
 | Is SV covered by third-party evidence? | **No** — no third-party 9-2LE capture was reachable |
 | Is MMS capture or monitoring covered? | **No** — out of scope |
 
+## Does the app actually run?
+
+Yes, on one synthetic network — and that is the whole claim. The repository carries
+samples/: an SCD for a two-bay 220/110 kV station, a four-frame GOOSE capture, and a
+README naming the two defects planted in them. An automated test drives the
+configuration screen, the monitor and the diagnostics over those files on every build
+and fails if the finding set changes. The exported report and the JSON issue list come
+from the same sample.
+
+It has not been run on a real substation, a client file, or a multi-substation network.
+
 ## What the evidence actually is
 
 The tests are pinned to bytes captured from a different implementation, not to
