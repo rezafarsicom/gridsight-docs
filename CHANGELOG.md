@@ -3,6 +3,24 @@
 Documentation changes only. The product itself is unreleased, so this file does
 not list product features as if they had shipped.
 
+## 2026-11-15 (session 7) — G4 closed; G5 script and G7 documents
+
+- **G4 is closed on 0.2.1**: Apache-2.0, tags `0.2.0` and `0.2.1`, a Windows x64 app image with
+  its own runtime, and `START-HERE.html` generated from `QUICKSTART.md`. The owner followed it and
+  reached exactly the sample's two findings. The artefact is **not published for download**.
+- **Release notes, a rewritten known-limits page and a support route** now exist:
+  [release notes](docs/RELEASE-NOTES-0.2.1.md), [known limits](docs/KNOWN-LIMITATIONS.md), and
+  [support](SUPPORT.md) — **hello@rezafarsi.com, answered within two working days**, email only.
+- **Numbers re-measured on `main` at 0.2.1:** 900 tests (1 skipped), **75.99%** aggregate coverage,
+  **92.06%** in MMS, **73.49%** in the UI. No other published number changed.
+- `WHAT-IS-PROVEN.md` corrected: the live session **has** run, the response path **is** asserted
+  against the peer, and there are **eleven** wire defects, not five.
+- `STATUS.md` corrected: product `0.2.1`; G4 closed; G5 and G7 in progress; G6 ahead.
+- Two cosmetic 0.2.1 interface defects are disclosed on the limits page and not yet fixed:
+  unreadable Anomaly Timeline axis labels, and a status-bar memory figure about 1024× too large.
+- **No price and no commercial licence term was published.** There is no download and no purchase
+  path.
+
 ## 2026-11-15 (later) — G3 closed: the scenario run, the change, the test cases
 
 - A scenario run replays a synthetic network with declared changes and reports **exactly** the

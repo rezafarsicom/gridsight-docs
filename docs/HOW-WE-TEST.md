@@ -31,15 +31,15 @@ sequence is not one recorded TCP session, and the test says so.
 
 ## Measured state
 
-Measured **15 November 2026** on the working branch, after the interface gate closed with
-libiec61850 v1.6.2.1 — OpenJDK 17.0.16 LTS, Gradle 9.3.1, Kotlin 2.2.21:
+Measured **15 November 2026** on `main` at the 0.2.1 tag, after the package gate closed —
+OpenJDK 17.0.16 LTS, Gradle 9.3.1, Kotlin 2.2.21:
 
 | Metric | Value |
 | --- | --- |
 | Tests | **900**, 0 failed, 0 errors, **1 skipped** — the opt-in live-peer test, which runs with GRIDSIGHT_LIVE_PEER=1 |
-| Aggregate line coverage | **75.95%** |
+| Aggregate line coverage | **75.99%** |
 | MMS module line coverage | **92.06%** |
-| gridsight-ui line coverage | **73.42%** |
+| gridsight-ui line coverage | **73.49%** |
 | Per-module coverage floors | Enforced by the build; lowering a floor is not permitted |
 | Clean-checkout build | Verified separately, so the committed tree needs nothing local |
 

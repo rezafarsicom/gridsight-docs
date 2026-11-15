@@ -4,7 +4,7 @@
 
 **GridSight is a desktop, offline tool for IEC 61850 diagnostics and interoperability testing in digital substations.** It reads a substation configuration file (SCL), analyses captured GOOSE and SV traffic, builds virtual IEDs from the same SCL, and writes a report from the analysis.
 
-> **Status: in development. There is no public release, no installer, no licence for a binary, and no download.** This repository contains documentation only — not the source code. Nothing here is a promise of a ship date.
+> **Status: in development. Version 0.2.1 exists as a development build for evaluation, but it is not published for download; there is no price and no commercial licence.** This repository contains documentation only — not the source code. Nothing here is a promise of a ship date.
 
 **Which GridSight this is:** the IEC 61850 project by Reza Farsi. Other products in the
 energy sector use a similar name and are unrelated to this one — see
@@ -33,16 +33,18 @@ Scope is deliberately narrow. **MMS capture and monitoring are out of scope.** T
 
 Two different things get confused in this market, so they are kept apart here.
 
-**Measured** (14 November 2026, on the working branch, after the live session; JDK 17.0.16, Gradle 9.3.1, Kotlin 2.2.21):
+**Measured** (15 November 2026, on `main` at the 0.2.1 tag, after the package gate closed; JDK 17.0.16, Gradle 9.3.1, Kotlin 2.2.21):
 
 - 900 tests, 0 failed, 0 errors, 1 skipped — the opt-in live-peer test.
-- 75.95% aggregate line coverage; 92.06% in the MMS module; 73.42% in the UI module.
+- 75.99% aggregate line coverage; 92.06% in the MMS module; 73.49% in the UI module.
 - Eleven wire-format defects found and fixed, none of them visible to a test that only compared GridSight with itself — six against third-party captures, five against a live peer.
 
 **Proven, and only this far:**
 
 - **The app runs on a committed synthetic network:** `samples/` holds one SCD, one short capture and the two defects planted in them; the configuration screen, the monitor and the diagnostics are exercised on it by an automated test, and the report it produces is exported as a file. libiec61850 v1.6.2.1, built from source, run on loopback. Association, name lists, four typed reads and release were accepted and decoded from the peer's own bytes. One peer, one model, five services.
-- The response path is asserted from those bytes; the older captures' malformed frames are pinned as a rejection test.`n- **A scenario run replays a synthetic network with declared changes** and reports exactly the findings that state must produce — nine scenarios, deterministic, headless, under a minute. It is not a live simulation: nothing is switched or controlled.
+- The response path is asserted from those bytes; the older captures' malformed frames are pinned as a rejection test.
+- **A scenario run replays a synthetic network with declared changes** and reports exactly the findings that state must produce — nine scenarios, deterministic, headless, under a minute. `normal` and `boundary` are asserted to find **nothing**. It is not a live simulation: nothing is switched or controlled.
+- **The 0.2.1 package was installed and followed by someone other than its author:** the owner ran `START-HERE.html`, loaded the sample and reached exactly the two documented findings.
 
 **Not proven:**
 
@@ -54,7 +56,7 @@ Details, with the exact conditions under which each gap would close: [`docs/WHAT
 
 ## Why this repository exists
 
-Because a diagnostic tool that hides its limits cannot be trusted in an engineering decision. The honest position is simple: the analysis pipeline is real and tested, interoperability is being proven against third-party evidence, and a release is gated on work that has not happened yet.
+Because a diagnostic tool that hides its limits cannot be trusted in an engineering decision. The honest position is simple: the analysis pipeline is real and tested, interoperability is proven against **one** named implementation over loopback and against third-party bytes, and a public release is gated on a second-person demo, a first paid use and the owner's publishing decision.
 
 This is also why the source tree is not here. What is published is the part that can be published truthfully today: scope, status, test method, known limitations, and a glossary that makes the vocabulary checkable.
 
@@ -66,6 +68,8 @@ This is also why the source tree is not here. What is published is the part that
 | [`docs/WHAT-IS-PROVEN.md`](docs/WHAT-IS-PROVEN.md) | The interoperability evidence, and its exact limits |
 | [`docs/HOW-WE-TEST.md`](docs/HOW-WE-TEST.md) | Why symmetric tests prove nothing, and what replaced them |
 | [`docs/KNOWN-LIMITATIONS.md`](docs/KNOWN-LIMITATIONS.md) | Every open defect and out-of-scope area that affects a user |
+| [`docs/RELEASE-NOTES-0.2.1.md`](docs/RELEASE-NOTES-0.2.1.md) | What works, what does not, and what changed since 0.2.0 |
+| [`SUPPORT.md`](SUPPORT.md) | The support address, the response time, and what is not supported |
 | [`docs/GLOSSARY.md`](docs/GLOSSARY.md) | SCL, GOOSE, SV, IED, APPID, 9-2LE — in one line each |
 | [`docs/FAQ.md`](docs/FAQ.md) | The questions buyers actually ask, answered without marketing |
 | [`examples/`](examples/README.md) | A synthetic SCL fragment used to explain the shape of a substation file |
@@ -88,4 +92,4 @@ The licence grants rights to this documentation. It does **not** grant the GridS
 
 Reza Farsi — product design and software engineering, Shiraz, Iran. Work is delivered directly, with AI agents supporting execution and human review on every claim that reaches a page.
 
-Maintained as documentation for an in-development product. Documentation version: 2026-11-14.
+Maintained as documentation for an in-development product. Documentation version: 2026-11-15.

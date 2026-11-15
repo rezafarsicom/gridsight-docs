@@ -32,14 +32,14 @@ first:
 
 ## What to expect
 
-- Acknowledgement: best effort, within 14 days.
-- Fixes: no SLA before a release exists. When the product ships, this file will
-  state supported versions and timelines.
-- Credit: offered in the release notes if you want it, and only with your
-  permission.
+- Acknowledgement: within two working days, the same response time as ordinary support.
+- Fixes: no SLA for the development build. When a release is published, this file will state
+  supported versions and timelines.
+- Credit: offered in the release notes if you want it, and only with your permission.
 
 ## Supported versions
 
 | Version | Supported |
 | --- | --- |
-| 0.1.0 (in development) | No public build; reports still accepted |
+| 0.2.1 (development build) | Not published for download; reports still accepted |
+| 0.1.0 and earlier | No public build; reports still accepted |
