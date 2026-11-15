@@ -26,8 +26,8 @@ session against one named implementation over loopback, not a device.
 
 ## What does not exist
 
-- **No public release or download.** A 0.2.1 artefact exists for evaluation and the owner's checks;
-  it is not published, and there is no purchase path.
+- **No public release or download.** A 0.2.1 artefact exists for the owner's checks and a
+  second-person demo; it is not published, and there is no purchase path.
 - **No price and no commercial licence terms.** The code is Apache-2.0; the commercial terms are a
   draft and are not in force.
 - **No physical device has been tested.** One implementation, **libiec61850 v1.6.2.1**, has been

@@ -9,7 +9,7 @@ whole support commitment; anything more is a separate written agreement.
 | --- | --- |
 | **Email** | **hello@rezafarsi.com** |
 | **Response time** | **within two working days** of a written question |
-| **Working days** | Sunday to Thursday, excluding public holidays. The maintainer is in Shiraz, Iran (UTC+3:30) |
+| **Working days** | The maintainer's local working days in Shiraz, Iran (UTC+3:30); weekends and public holidays are excluded |
 | **Languages** | English or Persian |
 | **Version covered** | 0.2.1 (Windows 10/11, 64-bit) |
 

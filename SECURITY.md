@@ -1,8 +1,9 @@
 # Security policy
 
-GridSight is not released. There is no installable binary today, so there is no
-supported version to patch. This policy exists so that a future report has a
-route that does not require publishing details in public.
+GridSight is not publicly released. A 0.2.1 development build exists but is not
+published for download, and there is no supported public version to patch. This
+policy exists so that a report on the build, or on a future release, has a route
+that does not require publishing details in public.
 
 ## Reporting a vulnerability
 

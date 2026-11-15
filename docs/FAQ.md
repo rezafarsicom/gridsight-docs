@@ -6,8 +6,8 @@ wording in one place.
 ### Can I buy it or download it now?
 
 No. There is no public download, no price and no commercial licence. A 0.2.1
-Windows development build exists for evaluation and the owner's checks, but it
-is not published, and there is no purchase path. The release gates and their
+Windows development build exists for the owner's checks and a second-person demo,
+but it is not published, and there is no purchase path. The release gates and their
 state are in [`STATUS.md`](STATUS.md); no date is attached to any of them.
 
 ### Does it work with ABB, Siemens, GE, or any other manufacturer's devices?

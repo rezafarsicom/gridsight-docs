@@ -4,7 +4,7 @@
 
 **GridSight is a desktop, offline tool for IEC 61850 diagnostics and interoperability testing in digital substations.** It reads a substation configuration file (SCL), analyses captured GOOSE and SV traffic, builds virtual IEDs from the same SCL, and writes a report from the analysis.
 
-> **Status: in development. Version 0.2.1 exists as a development build for evaluation, but it is not published for download; there is no price and no commercial licence.** This repository contains documentation only — not the source code. Nothing here is a promise of a ship date.
+> **Status: in development. Version 0.2.1 exists as a development build for the owner's checks and a second-person demo, but it is not published for download; there is no price and no commercial licence.** This repository contains documentation only — not the source code. Nothing here is a promise of a ship date.
 
 **Which GridSight this is:** the IEC 61850 project by Reza Farsi. Other products in the
 energy sector use a similar name and are unrelated to this one — see

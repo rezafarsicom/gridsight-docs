@@ -73,7 +73,7 @@ administrator rights. Nothing is written to `Program Files`; delete the folder t
 - **Ask a simulated IED on the loopback interface** for its name list and data model.
 - **Run offline.** No telemetry, no cloud dependency, no dongle.
 
-The measured state at this tag: **900 automated tests**, 0 failed, 1 skipped (the opt-in live-peer
+The measured state after the 0.2.1 build (no code changed after it): **900 automated tests**, 0 failed, 1 skipped (the opt-in live-peer
 test); **75.99%** aggregate line coverage; **92.06%** in the MMS module. Eleven wire-format defects
 were found by comparing against another implementation's bytes and fixed; each has a test that
 failed before the fix.
