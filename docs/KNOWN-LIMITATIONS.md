@@ -35,7 +35,13 @@ not a selling point.
   over time, does not model device behaviour, and proves nothing about a running site.
 - **The Simulate screen is a local virtual-IED simulation, not the scenario harness.** It runs the
   built-in virtual-IED scenarios. It does **not** load the nine scenario JSON files shipped under
-  `samples/scenarios/`; those are a command-line feature in 0.2.1.
+  `samples/scenarios/`; those are a command-line feature of the repository build, and the 0.2.1 package does not include it.
+
+- **The packaged 0.2.1 build cannot run a scenario.** The scenario runner lives in `gridsight-cli`
+  (`gridsight-cli scenario <file>`), which the zip does not contain. A buyer of that package receives
+  nine scenario files and nothing that can execute them. The matrix is proven in the repository build,
+  not in the download. Either the CLI ships with the next artefact or the scenario files stop shipping
+  with it — shipping files nobody can run is worse than shipping none.
 - **No "best change" and no ranking.** The report recites the change the rule that raised the finding
   implies, or says "no automatic suggestion". It does not compare remedies, estimate cost or choose
   between two findings on the same object.
