@@ -26,7 +26,7 @@ equipment.
 ## What does not exist
 
 - **No public release, installer, binary, or purchasable licence.**
-- **No live session with real equipment** — see [`WHAT-IS-PROVEN.md`](WHAT-IS-PROVEN.md).
+- **No live session with a physical device (one implementation, libiec61850 v1.6.2.1, has been exercised end to end and nothing else)** — see [`WHAT-IS-PROVEN.md`](WHAT-IS-PROVEN.md).
 - **No MMS capture or monitoring.** Out of scope by decision, not by oversight.
 - **No vendor-specific support or compatibility claim.**
 - **No scheduling or automation of report delivery.**
@@ -40,8 +40,8 @@ interoperability is proven.
 | Gate | Meaning | State |
 | --- | --- | --- |
 | G0 | Repository reconciled: clean tree, green build, test count recorded | **Closed** |
-| G1 | Interoperability proven against an independent implementation | **In progress** — capture-based evidence recorded; a live session and a named peer remain |
-| G2 | The interface runs end to end against a real SCD | **In progress** — shell compiles, UI tests pass, full run not yet a closed criterion |
+| G1 | Interoperability proven against an independent implementation | **Closed 14 Nov 2026** — a live session against libiec61850 v1.6.2.1: association, name lists, four reads, release. One peer, one model, five services |
+| G2 | The interface runs end to end against a real SCD | **In progress** — the desktop shell launches, carries 274 UI tests and now wears the product identity; a full run against a real configuration is still not a closed criterion |
 | G3 | One SCD produces one exported report with an issue list and test-case pack | Ahead |
 | G4 | Package and licence: licence file, tagged version, installable artefact | Ahead |
 | G5 | A ten-minute reproducible demo on a synthetic SCD, with no client data | Ahead |

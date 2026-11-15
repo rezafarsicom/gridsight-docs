@@ -5,15 +5,19 @@ a warning sign, not a selling point.
 
 ## Interoperability
 
-- **No live peer session has been performed.** No device has accepted a
-  GridSight request. Decoding third-party captures is not the same thing.
-- **The captures do not name their producer.** They are consistent with an
-  ASN.1-generated MMS stack, but consistency is not attribution, so no
+- **One peer, not equipment.** The live session ran against libiec61850
+  v1.6.2.1 built from source, over loopback: one model, five services. No
+  physical device, no other product and no other model has been tested, so no
   compatibility statement is made about any product or manufacturer.
-- **The response path is not asserted against conformant data.** The captured
-  server-to-client frames contain a malformed session Accept (a length one byte
-  short and a zero-length user-data field), so they cannot serve as reference
-  data. GridSight's response decoders are unit-tested only.
+- **The old captures still do not name their producer.** They remain useful as
+  decoding evidence and as a rejection fixture; they are no longer the basis of
+  the interoperability claim, which now rests on the named peer.
+- **The response path is asserted against the peer, not against a device.** The
+  old captures' server-to-client frames are malformed (a session Accept one byte
+  short, zero-length user-data) and are pinned as a test that must reject them.
+- **Nothing outside that conversation is proven.** Write, control, reporting,
+  file transfer and SV/GOOSE were not exercised against the peer, and
+  GridSight's own server in front of a foreign client has not been tested.
 - **The conversation test is composed.** Association and name list come from one
   capture; the read and the release come from another. Both are third-party; the
   sequence is not one recorded session.

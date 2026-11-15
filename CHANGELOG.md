@@ -3,6 +3,19 @@
 Documentation changes only. The product itself is unreleased, so this file does
 not list product features as if they had shipped.
 
+## 2026-11-14 (later the same day) — G1 closed, numbers refreshed
+
+The live session with libiec61850 v1.6.2.1 passed and the defects it exposed were
+fixed, so the interoperability section stopped being a list of unknowns:
+
+- **836 tests** (0 failed, 1 skipped — the opt-in live-peer test), **74.65%**
+  aggregate coverage, **92.06%** in MMS, **73.32%** in the UI module.
+- **Eleven** wire-format defects found and fixed; six against third-party
+  captures, five against the live peer.
+- docs/WHAT-IS-PROVEN.md, docs/KNOWN-LIMITATIONS.md, docs/STATUS.md and
+  README.md now state exactly one proven peer (libiec61850 v1.6.2.1, one model,
+  five services) and continue to refuse any device or vendor claim.
+- G1 is **closed** on that evidence; G2 remains in progress.
 ## Unreleased — documentation snapshot 2026-11-14
 
 First public documentation set for an in-development product.

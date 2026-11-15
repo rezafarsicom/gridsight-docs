@@ -1,17 +1,18 @@
 # What is proven, and what is not
 
 The core promise of a diagnostic tool is that it knows what it is looking at.
-For GridSight, the honest measurement date is **29 October 2026**. This page
-states exactly what that measurement supports.
+For GridSight, the honest measurement date is **14 November 2026** — the day the
+live session with libiec61850 v1.6.2.1 passed. This page states exactly what that
+measurement supports, and no more.
 
 ## Short version
 
 | Question | Answer today |
 | --- | --- |
 | Does GridSight read a complete MMS conversation written by another implementation? | **Yes** — the association, a name list, a read and the release are decoded from published third-party captures |
-| Has a real device ever accepted a GridSight request? | **No** — no live session has been performed |
-| Can GridSight claim interoperability with a named product? | **No** — the captures do not state their producer or version |
-| Is the response direction covered? | **Not as conformant reference data** — the captured server-to-client frames are malformed, and the response path is unit-tested only |
+| Has a real device ever accepted a GridSight request? | **Not a physical device.** One implementation has: **libiec61850 v1.6.2.1**, built from source, run on loopback, accepting association, name lists, four reads and release |
+| Can GridSight claim interoperability with a named product? | **One peer only** — libiec61850 v1.6.2.1; no other product, device or model is claimed |
+| Is the response direction covered? | **Yes, against the live peer** — every response is asserted from the peer's own bytes. The old captures' malformed frames are pinned as a rejection test instead |
 | Is SV covered by third-party evidence? | **No** — no third-party 9-2LE capture was reachable |
 | Is MMS capture or monitoring covered? | **No** — out of scope |
 

@@ -33,18 +33,22 @@ Scope is deliberately narrow. **MMS capture and monitoring are out of scope.** T
 
 Two different things get confused in this market, so they are kept apart here.
 
-**Measured** (29 October 2026, on the interoperability working branch, JDK 17, Gradle 9.3.1):
+**Measured** (14 November 2026, on the working branch, after the live session; JDK 17.0.16, Gradle 9.3.1, Kotlin 2.2.21):
 
-- 804 tests, 0 failed, 0 skipped.
-- 73.61% aggregate line coverage; 92.47% in the MMS module.
-- Five wire-format defects found and fixed only because the tests were pinned to bytes captured from a different implementation.
+- 836 tests, 0 failed, 0 errors, 1 skipped — the opt-in live-peer test.
+- 74.65% aggregate line coverage; 92.06% in the MMS module; 73.32% in the UI module.
+- Eleven wire-format defects found and fixed, none of them visible to a test that only compared GridSight with itself — six against third-party captures, five against a live peer.
+
+**Proven, and only this far:**
+
+- **A live session passed against one implementation:** libiec61850 v1.6.2.1, built from source, run on loopback. Association, name lists, four typed reads and release were accepted and decoded from the peer's own bytes. One peer, one model, five services.
+- The response path is asserted from those bytes; the older captures' malformed frames are pinned as a rejection test.
 
 **Not proven:**
 
-- **No live session has ever run between GridSight and real equipment.** No device has accepted a GridSight request. What exists is decoding evidence against published third-party captures.
-- **The response direction of those captures is not usable as conformant reference data** and has not been asserted separately.
-- **No vendor compatibility claim is made.** No device from any manufacturer has been tested, and none is named here.
-- The test captures do not state which product or version produced them.
+- **No physical device has been tested.** No multi-vendor, no conformance and no compatibility claim is made, and no manufacturer is named as a test subject.
+- Write, control, reporting, file transfer and SV/GOOSE were not exercised against the peer.
+- GridSight's own server in front of a foreign client has not been tested.
 
 Details, with the exact conditions under which each gap would close: [`docs/WHAT-IS-PROVEN.md`](docs/WHAT-IS-PROVEN.md) and [`docs/KNOWN-LIMITATIONS.md`](docs/KNOWN-LIMITATIONS.md).
 

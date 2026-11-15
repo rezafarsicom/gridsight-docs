@@ -31,14 +31,15 @@ sequence is not one recorded TCP session, and the test says so.
 
 ## Measured state
 
-Measured **29 October 2026** on the interoperability working branch, OpenJDK
-17.0.16 LTS, Gradle 9.3.1, Kotlin 2.2.21:
+Measured **14 November 2026** on the working branch, after the live session with
+libiec61850 v1.6.2.1 — OpenJDK 17.0.16 LTS, Gradle 9.3.1, Kotlin 2.2.21:
 
 | Metric | Value |
 | --- | --- |
-| Tests | **804**, 0 failed, 0 errors, 0 skipped |
-| Aggregate line coverage | **73.61%** |
-| MMS module line coverage | **92.47%** |
+| Tests | **836**, 0 failed, 0 errors, **1 skipped** — the opt-in live-peer test, which runs with GRIDSIGHT_LIVE_PEER=1 |
+| Aggregate line coverage | **74.65%** |
+| MMS module line coverage | **92.06%** |
+| gridsight-ui line coverage | **73.32%** |
 | Per-module coverage floors | Enforced by the build; lowering a floor is not permitted |
 | Clean-checkout build | Verified separately, so the committed tree needs nothing local |
 
@@ -48,11 +49,15 @@ alongside it.
 
 ## What is deliberately not tested
 
-- **Live equipment.** No device is connected to the test suite. A vendor-
-  independent live test would need hardware and a repeatable harness; that is a
-  separate decision, not an omission.
-- **The response path as conformant data.** The captured server-to-client frames
-  are malformed, so asserting on them would encode a bug.
+- **Live equipment.** No physical device is connected to the test suite. The one
+  live test that exists talks to **libiec61850 v1.6.2.1** built from source and run
+  as a separate process — one peer, one model (simpleIO_direct_control.icd), five
+  services. It is opt-in (GRIDSIGHT_LIVE_PEER=1) because it needs that peer
+  running; its bytes are committed so the response path is asserted on every build.
+- **The response path as conformant data — for the old captures.** Their
+  server-to-client frames are malformed, so asserting on them would encode a bug;
+  they are pinned as a *rejection* test instead. The response path is asserted
+  against the live peer's bytes, which are conformant by construction.
 - **MMS capture.** Out of scope; see [`KNOWN-LIMITATIONS.md`](KNOWN-LIMITATIONS.md).
 
 ## The argument in full
