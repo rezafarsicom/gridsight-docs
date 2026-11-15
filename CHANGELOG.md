@@ -3,6 +3,16 @@
 Documentation changes only. The product itself is unreleased, so this file does
 not list product features as if they had shipped.
 
+## 2026-11-15 (later) — G3 closed: the scenario run, the change, the test cases
+
+- A scenario run replays a synthetic network with declared changes and reports **exactly** the
+  findings that state must produce: nine scenarios, deterministic, headless, under a minute.
+- The report gains a test-case pack and a per-class suggested change, and still states which checks
+  did **not** run.
+- **900 tests** (1 skipped), **75.95%** aggregate coverage, **92.06%** in MMS.
+- G3 is **closed**; G4 is in progress — licence, a 0.2.0 artefact and a quickstart.
+
+The harness is a replay, not a live simulation. Nothing here switches or controls a network.
 ## 2026-11-15 — G2 closed on a committed sample
 
 The interface gate closed on evidence, not on a screenshot of a hand-built state:

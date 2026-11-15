@@ -35,14 +35,14 @@ Two different things get confused in this market, so they are kept apart here.
 
 **Measured** (14 November 2026, on the working branch, after the live session; JDK 17.0.16, Gradle 9.3.1, Kotlin 2.2.21):
 
-- 851 tests, 0 failed, 0 errors, 1 skipped — the opt-in live-peer test.
-- 75.23% aggregate line coverage; 92.06% in the MMS module; 73.42% in the UI module.
+- 900 tests, 0 failed, 0 errors, 1 skipped — the opt-in live-peer test.
+- 75.95% aggregate line coverage; 92.06% in the MMS module; 73.42% in the UI module.
 - Eleven wire-format defects found and fixed, none of them visible to a test that only compared GridSight with itself — six against third-party captures, five against a live peer.
 
 **Proven, and only this far:**
 
 - **The app runs on a committed synthetic network:** `samples/` holds one SCD, one short capture and the two defects planted in them; the configuration screen, the monitor and the diagnostics are exercised on it by an automated test, and the report it produces is exported as a file. libiec61850 v1.6.2.1, built from source, run on loopback. Association, name lists, four typed reads and release were accepted and decoded from the peer's own bytes. One peer, one model, five services.
-- The response path is asserted from those bytes; the older captures' malformed frames are pinned as a rejection test.
+- The response path is asserted from those bytes; the older captures' malformed frames are pinned as a rejection test.`n- **A scenario run replays a synthetic network with declared changes** and reports exactly the findings that state must produce — nine scenarios, deterministic, headless, under a minute. It is not a live simulation: nothing is switched or controlled.
 
 **Not proven:**
 

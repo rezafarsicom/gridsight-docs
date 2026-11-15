@@ -42,8 +42,8 @@ interoperability is proven.
 | G0 | Repository reconciled: clean tree, green build, test count recorded | **Closed** |
 | G1 | Interoperability proven against an independent implementation | **Closed 14 Nov 2026** — a live session against libiec61850 v1.6.2.1: association, name lists, four reads, release. One peer, one model, five services |
 | G2 | The interface runs end to end against a real SCD | **Closed 15 Nov 2026** — on the committed synthetic sample (`samples/`): open the SCD, browse the structure, run diagnostics, read the results list; two error paths assert user-facing text, and a clean `git archive` export builds and launches |
-| G3 | One SCD produces one exported report with an issue list and test-case pack | **In progress** — an HTML report and a JSON issue list are produced from the same sample, and the skipped checks are stated; the scenario harness and the suggested-change table remain |
-| G4 | Package and licence: licence file, tagged version, installable artefact | Ahead |
+| G3 | One SCD produces one exported report with an issue list and test-case pack | **Closed 15 Nov 2026** — report, JSON issue list, test-case pack and the suggested-change table from the sample; a nine-scenario replay matrix, deterministic and headless under a minute |
+| G4 | Package and licence: licence file, tagged version, installable artefact | **In progress** — Apache-2.0 mirrored, a 0.2.0 Windows app-image with a bundled runtime; no MSI this release |
 | G5 | A ten-minute reproducible demo on a synthetic SCD, with no client data | Ahead |
 | G6 | One external user runs it and pays — service or seat | Ahead |
 | G7 | Public release: release notes, known-limits page, support route | Ahead |

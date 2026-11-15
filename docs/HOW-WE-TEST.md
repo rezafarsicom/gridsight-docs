@@ -36,8 +36,8 @@ libiec61850 v1.6.2.1 — OpenJDK 17.0.16 LTS, Gradle 9.3.1, Kotlin 2.2.21:
 
 | Metric | Value |
 | --- | --- |
-| Tests | **851**, 0 failed, 0 errors, **1 skipped** — the opt-in live-peer test, which runs with GRIDSIGHT_LIVE_PEER=1 |
-| Aggregate line coverage | **75.23%** |
+| Tests | **900**, 0 failed, 0 errors, **1 skipped** — the opt-in live-peer test, which runs with GRIDSIGHT_LIVE_PEER=1 |
+| Aggregate line coverage | **75.95%** |
 | MMS module line coverage | **92.06%** |
 | gridsight-ui line coverage | **73.42%** |
 | Per-module coverage floors | Enforced by the build; lowering a floor is not permitted |
