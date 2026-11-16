@@ -1,7 +1,8 @@
 # Status
 
-Documentation snapshot: **2026-11-16**. Product version: **`0.5.0`**, a development build.
-It is **not published for download**.
+Documentation snapshot: **2026-11-17**. Product version: **`0.8.0`**, a development build.
+Both per-user installers are listed on the site's downloads page; they are **unsigned, certificate
+pending**.
 
 This page is written so that a reader can tell, in under a minute, what exists and what does not.
 It is deliberately boring: no dates are promised, because none has been set.
@@ -11,25 +12,33 @@ It is deliberately boring: no dates are promised, because none has been set.
 | Area | State | Basis |
 | --- | --- | --- |
 | SCL loading | Loads an ICD/SCD/CID/IID and the communication relationships between IEDs | Exercised end to end by the desktop app's tests on the committed sample |
-| Captured-traffic analysis | Captured GOOSE traffic is analysed against that SCL and connected to the diagnostic engine | Analysis path tested on a four-frame synthetic capture; no third-party SV capture exercised |
+| Captured-traffic analysis | Captured GOOSE traffic is analysed against that SCL and connected to the diagnostic engine; one independent SV publisher is pinned by tests | Analysis path tested on a four-frame synthetic capture; the SV witness proves one stream's fields, not conformance |
 | Diagnostics | Produces findings with evidence: the frame, the field and the matching SCL object | Engine tested; eleven wire-format defects found by cross-implementation comparison and fixed |
-| Reporting | One HTML report in English, Persian or Turkish plus `issues.json` (schema 1) and `testcases.json`, including the checks that did not run and a **ranked list of candidate changes** | Exported from the sample in all three languages from inside the package |
+| Reporting | One HTML report in English, Persian or Turkish plus `issues.json` (schema 1) and `testcases.json`, including the checks that did not run and a **ranked list of candidate changes**; from 0.8.0 a print-ready A4 stylesheet | Exported from the sample in all three languages from inside the package |
+| Review package | `gridsight-cli review` writes `report.html`, `changes.md`, `changes.patch`, `procedure.md`, `package.md` and `manifest.json`, plus `verification.html` with a second capture; two runs on the same inputs are byte-identical except the manifest's assembly time | Seven files on the sample in all three languages; the reproducibility test diffs two runs |
+| Batch review | `review --all` writes one package per `<name>.scd` + `<name>.pcap` pair and an index; a capture that does not name its SCL is refused with the reason | Three pairs produced three packages and one index; the mismatched pair produced none |
 | Scenario replay | A synthetic network is replayed from files with declared changes; nine scenarios, deterministic, headless, **inside the package** | `gridsight-cli.bat scenario --all samples\scenarios` from the extracted zip; `normal` and `boundary` assert **no findings**; 9/9 in under a second |
-| Desktop shell | Opens, loads the sample, monitors the capture and shows the two findings | End-to-end test plus a clean `git archive` build; the 0.2.1 package opens on Windows 10/11 x64 |
-| Command line | A headless front end for diagnose, report and scenario replay | 81.96% line coverage; the scenario matrix runs there |
-| Packaging | 0.5.0 app image with its own Java runtime, `START-HERE.html`, `QUICKSTART.md`, `TROUBLESHOOTING.md`, Apache-2.0 `LICENSE`/`NOTICE` | The artefact check passes on the exact zip; the matrix was run from the extracted package with no JDK on the machine |
-| Platform | Windows 10/11 x64 for this artefact; no dongle, no telemetry, no cloud dependency | Built artefact and a green build |
+| Desktop shell | Opens, loads the sample, monitors the capture and shows the two findings | End-to-end test plus a clean `git archive` build; the package opens on Windows 10/11 x64 |
+| Command line | A headless front end for diagnose, report, scenario replay, diff, verify and review | 86.92% line coverage; the scenario matrix and the review package run there |
+| Packaging | 0.8.0 per-user installers for the light and field builds, and the same two as ZIPs, each with its own Java runtime, `START-HERE.html`, `QUICKSTART.md`, `TROUBLESHOOTING.md`, Apache-2.0 `LICENSE`/`NOTICE` | The artefact check passes on each file; each installer was installed, started, checked for version and flavour, and uninstalled |
+| Platform | Windows 10/11 x64 for these artefacts; no dongle, no telemetry, no cloud dependency | Built artefacts and a green build |
 
 Two honesty notes on that table: "exists" means **built and tested**, not **shipped**; and no row
 has been validated against real substation equipment. The one exception in the tests is a live
 session against one named implementation over loopback, not a device.
 
+## Measured on this build
+
+**0.8.0, measured 17 November 2026:** **1073 tests, 0 failed, 1 skipped** (the opt-in live-peer
+test); **79.05% aggregate line coverage (14,999 / 18,973)**, 90.91% diagnostics, 92.06% MMS,
+73.83% UI. Test and coverage floors are enforced per module; none was lowered. The artefacts are
+`GridSight-0.8.0-light-setup.exe`, `GridSight-0.8.0-field-setup.exe` and the same two builds as
+ZIPs; both installers are unsigned.
+
 ## What does not exist
 
-- **No public release or download.** A 0.2.1 artefact exists for the owner's checks and a
-  second-person demo; it is not published, and there is no purchase path.
-- **No price and no commercial licence terms.** The code is Apache-2.0; the commercial terms are a
-  draft and are not in force.
+- **No signed installer.** Both 0.8.0 installers are published as **unsigned, certificate pending**;
+  no update channel exists.
 - **No physical device has been tested.** One implementation, **libiec61850 v1.6.2.1**, has been
   exercised end to end over loopback; no other implementation and no device — see
   [`WHAT-IS-PROVEN.md`](WHAT-IS-PROVEN.md).
@@ -41,7 +50,8 @@ session against one named implementation over loopback, not a device.
   advance state over time or control anything.
 - **No scheduling or automation of report delivery.**
 - **No multi-user, server, or cloud mode.**
-- **No signed installer, MSI or update channel.**
+- **No Persian or Turkish interface.** The report and the review package are localised; the
+  interface stays English.
 
 ## Release gates
 

@@ -18,6 +18,38 @@
 Documentation changes only. The product itself is unreleased, so this file does
 not list product features as if they had shipped.
 
+## 2026-11-17 — 0.8.0: the review package and the downloads page
+
+- **`gridsight-cli review`** writes the seven files a service engagement delivers: `report.html`,
+  `changes.md`, `changes.patch`, `procedure.md`, `package.md`, `manifest.json`, and
+  `verification.html` when a second capture is supplied.
+- **The package is reproducible.** Two runs on the same inputs are byte-identical except the
+  manifest's `generatedAt`; a test runs the command twice into two folders and diffs every file.
+- **The report is print-ready.** `@page` A4 rules, a page break before each section, a running
+  header, and fixed-layout tables that wrap long identifiers. `review --print` opens it.
+- **`review --all <folder>`** writes one package per `<name>.scd` + `<name>.pcap` pair plus an index,
+  and refuses a pair whose capture does not name its SCL.
+- **Measured:** 1073 tests, 0 failed, 1 skipped; 79.05% aggregate coverage (14,999 / 18,973),
+  90.91% diagnostics, 92.06% MMS, 73.83% UI.
+- **Artefacts:** light and field installers and ZIPs, both installers unsigned, certificate pending.
+  New pages: `docs/RELEASE-NOTES-0.8.0.md`; `docs/STATUS.md` and `docs/KNOWN-LIMITATIONS.md`
+  refreshed.
+
+## 2026-11-16 — 0.7.0: the verification loop and the installable release
+
+- **Combined remediation, measured:** the 1-, 2- and 3-edit combinations, bounded at 12 and printed,
+  with prediction beside observation for the chosen patch; worse rows are printed.
+- **`verify --before --after --changes`** reports resolved · still present · newly introduced in
+  English, Persian and Turkish.
+- **Per-user installers** for the light and field builds, with a manifest generated from the
+  artefact and compared with the site fragment and `START-HERE.html`.
+- **Signing fails loudly** without a certificate; both installers are unsigned, certificate pending.
+- **Measured:** 1064 tests, 0 failed, 1 skipped; 78.58% aggregate coverage, 90.40% diagnostics,
+  92.06% MMS, 73.83% UI.
+- **Artefacts:** `GridSight-0.7.0-light-setup.exe` (103,967,232 bytes) and
+  `GridSight-0.7.0-field-setup.exe` (103,968,768 bytes), each installed, started and uninstalled;
+  the same two builds as ZIPs. New pages: `docs/RELEASE-NOTES-0.7.0.md`.
+
 ## 2026-11-15 (session 7) — G4 closed; G5 script and G7 documents
 
 - **G4 is closed on 0.2.1**: Apache-2.0, tags `0.2.0` and `0.2.1`, a Windows x64 app image with
