@@ -76,7 +76,7 @@ flavour, and uninstalled. Both packaged scenario matrices and both ZIP checks pa
 ## Measured
 
 - **1073 tests, 0 failed, 1 skipped** (the opt-in live-peer test).
-- **79.05% aggregate line coverage** (14,999 / 18,973), 90.91% diagnostics, 92.06% MMS, 73.83% UI.
+- **79.12% aggregate line coverage** (15,010 / 18,971), 90.91% diagnostics, 92.06% MMS, 73.83% UI.
 
 ## Limits
 

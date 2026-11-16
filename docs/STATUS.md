@@ -1,4 +1,4 @@
-# Status
+﻿# Status
 
 Documentation snapshot: **2026-11-17**. Product version: **`0.8.0`**, a development build.
 Both per-user installers are listed on the site's downloads page; they are **unsigned, certificate
@@ -30,7 +30,7 @@ session against one named implementation over loopback, not a device.
 ## Measured on this build
 
 **0.8.0, measured 17 November 2026:** **1073 tests, 0 failed, 1 skipped** (the opt-in live-peer
-test); **79.05% aggregate line coverage (14,999 / 18,973)**, 90.91% diagnostics, 92.06% MMS,
+test); **79.12% aggregate line coverage (15,010 / 18,971)**, 90.91% diagnostics, 92.06% MMS,
 73.83% UI. Test and coverage floors are enforced per module; none was lowered. The artefacts are
 `GridSight-0.8.0-light-setup.exe`, `GridSight-0.8.0-field-setup.exe` and the same two builds as
 ZIPs; both installers are unsigned.
@@ -40,7 +40,7 @@ ZIPs; both installers are unsigned.
 - **No signed installer.** Both 0.8.0 installers are published as **unsigned, certificate pending**;
   no update channel exists.
 - **No physical device has been tested.** One implementation, **libiec61850 v1.6.2.1**, has been
-  exercised end to end over loopback; no other implementation and no device — see
+  exercised end to end over loopback; no other implementation and no device â€” see
   [`WHAT-IS-PROVEN.md`](WHAT-IS-PROVEN.md).
 - **No multi-vendor evidence.** SEL, ABB, Siemens and GE are untested; no compatibility claim is made.
 - **No MMS capture or monitoring.** Out of scope by decision, not by oversight.
@@ -60,13 +60,13 @@ The order is deliberate: the interface does not get more complete until interope
 | Gate | Meaning | State |
 | --- | --- | --- |
 | G0 | Repository reconciled: clean tree, green build, test count recorded | **Closed** |
-| G1 | Interoperability proven against an independent implementation | **Closed 14 Nov 2026** — a live session against libiec61850 v1.6.2.1: association, name lists, four reads, release. One peer, one model, five services |
-| G2 | The interface runs end to end against a real SCD | **Closed 15 Nov 2026** — on the committed synthetic sample (`samples/`): open the SCD, browse the structure, run diagnostics, read the results list; two error paths assert user-facing text, and a clean `git archive` export builds and launches |
-| G3 | One SCD produces one exported report with an issue list and test-case pack | **Closed 15 Nov 2026** — report, JSON issue list, test-case pack and the suggested-change table from the sample; a nine-scenario replay matrix, deterministic and headless under a minute |
-| G4 | Package and licence: licence file, tagged version, installable artefact | **Closed 15 Nov 2026** — Apache-2.0, tags `0.2.0` and `0.2.1`, a Windows x64 app image with a bundled runtime, and a guide the owner followed to the sample's two findings |
-| G5 | A ten-minute reproducible demo on a synthetic SCD, with no client data | **In progress** — the sample, the report and the ten-minute script exist; the second-person run remains |
-| G6 | One external user runs it and pays — service or seat | **Ahead** |
-| G7 | Public release: release notes, known-limits page, support route | **In progress** — the three documents exist; the site/docs sync and publication remain |
+| G1 | Interoperability proven against an independent implementation | **Closed 14 Nov 2026** â€” a live session against libiec61850 v1.6.2.1: association, name lists, four reads, release. One peer, one model, five services |
+| G2 | The interface runs end to end against a real SCD | **Closed 15 Nov 2026** â€” on the committed synthetic sample (`samples/`): open the SCD, browse the structure, run diagnostics, read the results list; two error paths assert user-facing text, and a clean `git archive` export builds and launches |
+| G3 | One SCD produces one exported report with an issue list and test-case pack | **Closed 15 Nov 2026** â€” report, JSON issue list, test-case pack and the suggested-change table from the sample; a nine-scenario replay matrix, deterministic and headless under a minute |
+| G4 | Package and licence: licence file, tagged version, installable artefact | **Closed 15 Nov 2026** â€” Apache-2.0, tags `0.2.0` and `0.2.1`, a Windows x64 app image with a bundled runtime, and a guide the owner followed to the sample's two findings |
+| G5 | A ten-minute reproducible demo on a synthetic SCD, with no client data | **In progress** â€” the sample, the report and the ten-minute script exist; the second-person run remains |
+| G6 | One external user runs it and pays â€” service or seat | **Ahead** |
+| G7 | Public release: release notes, known-limits page, support route | **In progress** â€” the three documents exist; the site/docs sync and publication remain |
 
 No date is attached to any open gate. A date would be a promise this project is not in a position
 to keep.
