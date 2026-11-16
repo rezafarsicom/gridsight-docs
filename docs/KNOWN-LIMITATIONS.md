@@ -37,14 +37,14 @@ not a selling point.
   built-in virtual-IED scenarios. It does **not** load the nine scenario JSON files shipped under
   `samples/scenarios/`; those are a command-line feature of the repository build, and the 0.2.1 package does not include it.
 
-- **The packaged 0.2.1 build cannot run a scenario.** The scenario runner lives in `gridsight-cli`
-  (`gridsight-cli scenario <file>`), which the zip does not contain. A buyer of that package receives
-  nine scenario files and nothing that can execute them. The matrix is proven in the repository build,
-  not in the download. Either the CLI ships with the next artefact or the scenario files stop shipping
+- **Scenario replay ships in the package from 0.5.0.** The runner (`gridsight-cli scenario`) and the nine
+  scenario files are inside the zip, and the matrix is asserted from the packaged build. In 0.2.1 to 0.4.0 the
+  files shipped without a runner, and that is why this line changed rather than disappeared.
   with it — shipping files nobody can run is worse than shipping none.
-- **No "best change" and no ranking.** The report recites the change the rule that raised the finding
-  implies, or says "no automatic suggestion". It does not compare remedies, estimate cost or choose
-  between two findings on the same object.
+- **The ranking is a rule, not an optimisation.** From 0.5.0 the report ranks candidate changes by a
+  published rule (`score = 3n + 2s + 2r - b`, printed in the report). It does not estimate cost, does not
+  know your maintenance window, and does not claim a change is sufficient to energise. It ranks what it can
+  measure: findings closed, severity, affected objects and reversibility.
 - **No efficiency view.** The three metrics are defined for a pilot; the chart does not exist in
   this build.
 - **No multi-user, server mode, cloud sync, telemetry or hardware integration.**

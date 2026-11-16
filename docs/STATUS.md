@@ -1,6 +1,6 @@
 # Status
 
-Documentation snapshot: **2026-11-15**. Product version: **`0.2.1`**, a development build.
+Documentation snapshot: **2026-11-16**. Product version: **`0.5.0`**, a development build.
 It is **not published for download**.
 
 This page is written so that a reader can tell, in under a minute, what exists and what does not.
@@ -13,11 +13,11 @@ It is deliberately boring: no dates are promised, because none has been set.
 | SCL loading | Loads an ICD/SCD/CID/IID and the communication relationships between IEDs | Exercised end to end by the desktop app's tests on the committed sample |
 | Captured-traffic analysis | Captured GOOSE traffic is analysed against that SCL and connected to the diagnostic engine | Analysis path tested on a four-frame synthetic capture; no third-party SV capture exercised |
 | Diagnostics | Produces findings with evidence: the frame, the field and the matching SCL object | Engine tested; eleven wire-format defects found by cross-implementation comparison and fixed |
-| Reporting | One HTML report plus `issues.json` and `testcases.json`, including the checks that did not run | Exported from the sample and opened without the app |
-| Scenario replay | A synthetic network is replayed from files with declared changes; nine scenarios, deterministic, headless | `gridsight-cli scenario`; `normal` and `boundary` assert **no findings**; matrix well under a minute |
+| Reporting | One HTML report in English, Persian or Turkish plus `issues.json` (schema 1) and `testcases.json`, including the checks that did not run and a **ranked list of candidate changes** | Exported from the sample in all three languages from inside the package |
+| Scenario replay | A synthetic network is replayed from files with declared changes; nine scenarios, deterministic, headless, **inside the package** | `gridsight-cli.bat scenario --all samples\scenarios` from the extracted zip; `normal` and `boundary` assert **no findings**; 9/9 in under a second |
 | Desktop shell | Opens, loads the sample, monitors the capture and shows the two findings | End-to-end test plus a clean `git archive` build; the 0.2.1 package opens on Windows 10/11 x64 |
 | Command line | A headless front end for diagnose, report and scenario replay | 81.96% line coverage; the scenario matrix runs there |
-| Packaging | 0.2.1 app image with its own Java runtime, `START-HERE.html`, Apache-2.0 `LICENSE`/`NOTICE` | The owner followed the guide from a double-click to exactly the two documented findings |
+| Packaging | 0.5.0 app image with its own Java runtime, `START-HERE.html`, `QUICKSTART.md`, `TROUBLESHOOTING.md`, Apache-2.0 `LICENSE`/`NOTICE` | The artefact check passes on the exact zip; the matrix was run from the extracted package with no JDK on the machine |
 | Platform | Windows 10/11 x64 for this artefact; no dongle, no telemetry, no cloud dependency | Built artefact and a green build |
 
 Two honesty notes on that table: "exists" means **built and tested**, not **shipped**; and no row

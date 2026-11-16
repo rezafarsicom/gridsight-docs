@@ -1,3 +1,18 @@
+## 0.5.0 — 16 November 2026
+
+- **Ranked candidate changes**, by a published rule (`3n + 2s + 2r - b`) whose inputs and arithmetic are
+  printed in the report. Claim: "ranks the candidate changes by a published rule". "Finds the root cause"
+  stays refused.
+- **Build-derived provenance**: the report no longer prints `0.1.0-SNAPSHOT`; a test fails if a literal returns.
+- **JSON schema 1** with a compatibility promise (`docs/REPORT-COMPATIBILITY.md`).
+- **Diff refinements**: streams matched by `goID`/`APPID`, printed clock-drift tolerance, renames reported as
+  renames, and a 50,000-frame path with the measured time.
+- **Interface**: keyboard reachability, Enter/Escape dismissal, progress with Cancel, 1024×768 supported.
+- **Packaged documents**: quickstart, troubleshooting and a rendered troubleshooting page inside the zip.
+- **976 tests**, 0 failed, 1 skipped; 76.75% aggregate coverage, 92.06% in MMS.
+- Package: 103,575,011 bytes, SHA-256 `2A8D9807B6418CC5F9755FA22E65B2B7CC07E7C65F3D599DDE243FECDE42F7B1`.
+- Limits removed: the packaged build can run scenarios; the two cosmetic interface defects are fixed.
+- Limits kept: one peer, no device, no MMS capture, no live simulation, English interface.
 # Changelog
 
 Documentation changes only. The product itself is unreleased, so this file does
