@@ -1,6 +1,6 @@
-# GridSight 0.8.0 — release notes
+﻿# GridSight 0.8.0 â€” release notes
 
-**17 November 2026 · Windows 10/11, 64-bit · development build**
+**17 November 2026 Â· Windows 10/11, 64-bit Â· development build**
 
 0.8.0 turns a folder into the package a service engagement delivers. It does not add an analysis:
 it adds the one command that assembles the report, the ranked changes, the procedure, the
@@ -24,7 +24,7 @@ gridsight-cli review --scl substation.scd --capture before.pcap [--capture after
 | `changes.md` | every ranked candidate, including the manual ones and the measured refusals |
 | `changes.patch` | the SCL-level edit set a person can review and `scl patch` can replay |
 | `procedure.md` | the ordered steps, the vendor action and the verification capture |
-| `verification.html` | with a second capture: resolved · still present · newly introduced |
+| `verification.html` | with a second capture: resolved Â· still present Â· newly introduced |
 | `package.md` | the one-page cover: build, package id, capture window, input and file hashes, checks that did not run, how to print |
 | `manifest.json` | every file with its SHA-256, plus the assembly time |
 
@@ -33,7 +33,7 @@ gridsight-cli review --scl substation.scd --capture before.pcap [--capture after
 Two runs on the same inputs write the same bytes for every document, and their `manifest.json`
 differs only in `generatedAt`. A package derives the report id from the input hashes rather than a
 UUID, takes the report timestamp from the capture's first frame rather than the wall clock, and
-names findings `F1`, `F2`, … in `changes.md` instead of the per-run UUID. A test runs the command
+names findings `F1`, `F2`, â€¦ in `changes.md` instead of the per-run UUID. A test runs the command
 twice into two folders and diffs every file and the manifest.
 
 ## Print-ready output
@@ -65,10 +65,10 @@ interface stays English.
 
 | File | Bytes | SHA-256 |
 |---|---:|---|
-| `GridSight-0.8.0-light-setup.exe` | 104,032,256 | `31E704335A079CAC3C7C0A7A6B840E463A9FB09D73FB14C760DF8EAB835DBEF1` |
-| `GridSight-0.8.0-field-setup.exe` | 104,033,792 | `9BEB1040EE6D58587FE1041DA01BB8161BD8E012F9A673FA6E6D451E85461773` |
-| `GridSight-0.8.0-windows-x64.zip` | 104,021,569 | `E848CD1C5E2D1E028F4E142573F5BA9E32A9DE507A6713D91F41E936E58D5CF9` |
-| `GridSight-0.8.0-field-windows-x64.zip` | 104,022,791 | `E33894178DE5703D750FD2818D03460C539A1DB90A67FAD136B98D390E284D70` |
+| `GridSight-0.8.0-light-setup.exe` | 104,031,744 | `03645B3E3FE023B0B63AAD0D407A7B7F29BD9BD553B0DAC690E28327AABBA9E0` |
+| `GridSight-0.8.0-field-setup.exe` | 104,033,280 | `F7D0F7D5969C2A9008E91693C6307CD72D7B862F2DE7FB12460C187968EF65D2` |
+| `GridSight-0.8.0-windows-x64.zip` | 104,021,125 | `4EE7D9DB3CADB2C2ADADE64E602E43B2BF5FC8C60B9CB02C56D8447498CA0830` |
+| `GridSight-0.8.0-field-windows-x64.zip` | 104,022,342 | `540366F01B9FAE34AED04E02CC4AFBCDF68FB81CE576CB569131048E2BB4DC3F` |
 
 Both installers were installed silently, started, checked for `Version: 0.8.0` and the expected
 flavour, and uninstalled. Both packaged scenario matrices and both ZIP checks passed.
